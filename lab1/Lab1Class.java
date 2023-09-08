@@ -2,9 +2,9 @@ import java.lang.Math;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 public class Lab1Class {
-    private double a=0.7;
-    private double b=0.05;
-    private double x=0.5;
+    private final double a=0.7;
+    private final double b=0.05;
+    private final double x=0.5;
 
     public double calculateR(){
         return (Math.pow(x, 2) * (x + 1)) / b - Math.pow(Math.sin(x + a), 2);
