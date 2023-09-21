@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args){
         Student[] students = fillTestStudents();
 
-        printStudents(students);
+        printStudentsFromFaculty(students,"Факультет 2");
 
-        printStudentsBornAftet2000(students);
+        printStudentsBornAftet2000(students,LocalDate.of(1999, 12, 30));
 
         printStudentsFromGroup(students,"Група 1");
     }
@@ -19,18 +19,18 @@ public class Main {
         }
     }
 
-    public static final void printStudentsBornAftet2000(Student[]students){
-        System.out.println("Студенти народжені після 2000 року:");
+    public static final void printStudentsBornAftet2000(Student[]students,LocalDate year){
+        System.out.println("Студенти народжені після "+ year.getYear() +" року:");
         for (Student student : students){
-            if(student.getDateOfBirth().getYear()>2000){
+            if(student.getDateOfBirth().getYear()>year.getYear()){
                 student.printStudentInfo();
             }
         }
     }
-    public static final void printStudents(Student[] students){
-        System.out.println("Інформація про студентів 2 факультету:");
+    public static final void printStudentsFromFaculty(Student[] students, String faculty){
+        System.out.println("Інформація про студентів "+ faculty+":");
         for (Student student : students) {
-            if(student.getFaculty()=="Факультет 2") {
+            if(student.getFaculty()==faculty) {
                 student.printStudentInfo();
             }
         }
