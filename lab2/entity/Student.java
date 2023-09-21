@@ -1,4 +1,7 @@
+package entity;
+
 import java.time.LocalDate;
+
 public class Student {
     private int id;
     private String lastName;
@@ -25,7 +28,7 @@ public class Student {
         this.group = group;
     }
 
-    public  void printStudentInfo() {
+    public void printStudentInfo() {
         System.out.println("ID: " + this.id);
         System.out.println("Прізвище: " + this.middleName);
         System.out.println("Ім'я: " + this.firstName);
@@ -38,6 +41,7 @@ public class Student {
         System.out.println("Група: " + this.group);
         System.out.println();
     }
+
     public int getId() {
         return id;
     }
