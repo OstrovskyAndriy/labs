@@ -7,17 +7,27 @@ public class Main {
         MyArrayProcessor arrayProcessor = new MyArrayProcessor();
 
         String fileName = "OneDimensional.txt";
-        double[] oneDimensionalArray = arrayReader.readOneDimensionalArray(fileName);
-        arrayProcessor.processArray(oneDimensionalArray);
-        System.out.println("\none-demencional product = "+arrayProcessor.calculate(oneDimensionalArray));
+        double[] oneDimensionalArray ;
+
+        if((oneDimensionalArray= arrayReader.readOneDimensionalArray(fileName))!=null){
+            arrayProcessor.processArray(oneDimensionalArray);
+            System.out.println("\none-demencional product = "+arrayProcessor.calculate(oneDimensionalArray));
+        }
+        else{
+            System.out.println("some error with "+fileName+"...");
+        }
 
         System.out.println();
         fileName = "TwoDimensional.txt";
-        double[][] twoDimensionalArray = arrayReader.readTwoDimensionalArray(fileName);
-        arrayProcessor.processArray(twoDimensionalArray);
+        double[][] twoDimensionalArray;
 
-        System.out.println("two-dimencionsl sum = "+ arrayProcessor.calculate(twoDimensionalArray));
-
+        if((twoDimensionalArray= arrayReader.readTwoDimensionalArray(fileName))!=null){
+            arrayProcessor.processArray(twoDimensionalArray);
+            System.out.println("two-dimencionsl sum = "+ arrayProcessor.calculate(twoDimensionalArray));
+        }
+        else{
+            System.out.println("some error with "+fileName+"...");
+        }
 
     }
 }
