@@ -28,8 +28,11 @@ public class Main {
             System.out.print("Enter password: ");
             String password = scanner.nextLine();
             PasswordValidator passwordValidator = new PasswordValidator(password);
-            System.out.println(passwordValidator.isValidPassword());
-        } catch (Exception e) {
+            if(passwordValidator.isValidPassword()) {
+                System.out.println("corect password");
+            }
+        }
+        catch (Exception e) {
             System.out.println(e.toString());
         }
     }

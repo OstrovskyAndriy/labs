@@ -19,7 +19,7 @@ public class PasswordValidator {
         this.password = password;
     }
 
-    public static String isValidPassword() throws Exception {
+    public static boolean isValidPassword() throws Exception {
         if (password.length() < 8) {
             throw new Exception("length less than 8");
         }
@@ -36,6 +36,6 @@ public class PasswordValidator {
             throw new Exception("the password must contain [!@#$%&*]");
         }
 
-        return "correct password";
+        return true;
     }
 }
